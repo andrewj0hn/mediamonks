@@ -1,0 +1,49 @@
+.raster {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    outline: 3px solid #1a1a1a;
+    box-shadow: 0 0 15px #000;
+}
+
+.raster div {
+    position: relative;
+}
+
+.raster div::after {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    background-color: #1a1a1a;
+    transition: background-color 1s;
+}
+
+.finished .raster div::after {
+    background-color: transparent;
+}
+
+.raster div:nth-child(1)::after,
+.raster div:nth-child(2)::after,
+.raster div:nth-child(3)::after {
+    bottom: -1.5px;
+    width: 100%;
+    height: 3px;
+}
+
+.raster div:nth-child(4)::after,
+.raster div:nth-child(5)::after,
+.raster div:nth-child(6)::after {
+    right: -1.5px;
+    width: 3px;
+    height: 100%;
+}
+
+.raster div:nth-child(1) { grid-column: 1/5; grid-row: 1; }
+.raster div:nth-child(2) { grid-column: 1/5; grid-row: 2; }
+.raster div:nth-child(3) { grid-column: 1/5; grid-row: 3; }
+.raster div:nth-child(4) { grid-column: 1; grid-row: 1/5; }
+.raster div:nth-child(5) { grid-column: 2; grid-row: 1/5; }
+.raster div:nth-child(6) { grid-column: 3; grid-row: 1/5; }

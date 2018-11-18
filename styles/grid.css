@@ -1,0 +1,77 @@
+.grid {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.grid > div {
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    transition: left 100ms, top 100ms;
+}
+
+.grid .dropzone {
+    transition: none;
+}
+
+.grid .piece,
+.finished .grid .dropzone {
+    background-size: calc(100% * 4);
+    background-image: url('../assets/monks.jpg');
+    background-repeat: no-repeat;
+}
+
+.grid.started .piece {
+    cursor: pointer;
+}
+
+.grid div[data-current-position="1"] { left: 0; top: 0; }
+.grid div[data-current-position="2"] { left: 25%; top: 0; }
+.grid div[data-current-position="3"] { left: 50%; top: 0; }
+.grid div[data-current-position="4"] { left: 75%; top: 0; }
+.grid div[data-current-position="5"] { left: 0; top: 25%; }
+.grid div[data-current-position="6"] { left: 25%; top: 25%; }
+.grid div[data-current-position="7"] { left: 50%; top: 25%; }
+.grid div[data-current-position="8"] { left: 75%; top: 25%; }
+.grid div[data-current-position="9"] { left: 0; top: 50%; }
+.grid div[data-current-position="10"] { left: 25%; top: 50%; }
+.grid div[data-current-position="11"] { left: 50%; top: 50%; }
+.grid div[data-current-position="12"] { left: 75%; top: 50%; }
+.grid div[data-current-position="13"] { left: 0; top: 75%; }
+.grid div[data-current-position="14"] { left: 25%; top: 75%; }
+.grid div[data-current-position="15"] { left: 50%; top: 75%; }
+.grid div[data-current-position="16"] { left: 75%; top: 75%; }
+
+.grid div[data-final-position="1"],
+.grid div[data-final-position="2"],
+.grid div[data-final-position="3"],
+.grid div[data-final-position="4"] { background-position-y: top; }
+.grid div[data-final-position="5"],
+.grid div[data-final-position="6"],
+.grid div[data-final-position="7"],
+.grid div[data-final-position="8"] { background-position-y: calc(100% / 3); }
+.grid div[data-final-position="9"],
+.grid div[data-final-position="10"],
+.grid div[data-final-position="11"],
+.grid div[data-final-position="12"] { background-position-y: calc(100% / 3 * 2); }
+.grid div[data-final-position="13"],
+.grid div[data-final-position="14"],
+.grid div[data-final-position="15"],
+.grid div[data-final-position="16"] { background-position-y: bottom; }
+.grid div[data-final-position="1"],
+.grid div[data-final-position="5"],
+.grid div[data-final-position="9"],
+.grid div[data-final-position="13"] { background-position-x: left; }
+.grid div[data-final-position="2"],
+.grid div[data-final-position="6"],
+.grid div[data-final-position="10"],
+.grid div[data-final-position="14"] { background-position-x: calc(100% / 3); }
+.grid div[data-final-position="3"],
+.grid div[data-final-position="7"],
+.grid div[data-final-position="11"],
+.grid div[data-final-position="15"] { background-position-x: calc(100% / 3 * 2); }
+.grid div[data-final-position="4"],
+.grid div[data-final-position="8"],
+.grid div[data-final-position="12"],
+.grid div[data-final-position="16"] { background-position-x: right; }
